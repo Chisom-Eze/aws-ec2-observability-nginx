@@ -64,7 +64,7 @@ This mirrors a common production pattern where application hosts are responsible
 - Confirmed OS tooling (`yum`, systemctl)
 
 📸 **Screenshot:**  
-`/screenshots/ec2-instance-running.png`  
+![EC2 Instance running](screenshots/ec2-instance-running.png)  
 *(EC2 instance running and reachable)*
 
 ---
@@ -80,7 +80,7 @@ This allowed the CloudWatch Agent to:
 - Publish custom system metrics
 
 📸 **Screenshot:**  
-`/screenshots/iam-role-attached.png`
+![EC2 Instance Role](screenshots/iam-role-attached.png)
 
 ---
 
@@ -93,8 +93,8 @@ Nginx was installed not just to serve traffic, but to **produce meaningful logs*
 - Confirmed error log paths
 
 📸 **Optional Screenshot:**  
-`/screenshots/nginx-running.png`
-`/screenshots/nginx-logging-path.png`
+![Nginx Browser Confirmation](screenshots/nginx-running.png)
+![Nginx Log Paths](screenshots/nginx-logging-path.png)
 
 ---
 
@@ -110,7 +110,7 @@ Nginx was installed not just to serve traffic, but to **produce meaningful logs*
 - Started and validated the agent service
 
 📸 **Screenshot:**  
-screenshots/cloudwatch-agent-running.png
+![Cloudwatch Agent installed](screenshots/cloudwatch-agent-running.png)
 
 ---
 
@@ -125,7 +125,7 @@ To validate log observability:
 This proved that CloudWatch was capturing **actual application failures**, not just normal traffic.
 
 📸 **Screenshot:**  
-`/screenshots/cloudwatch-nginx-error-logs.png`
+![Cloudwatch Log Stream](screenshots/cloudwatch-nginx-error-logs.png)
 
 ---
 
@@ -143,7 +143,7 @@ High CPU utilization did not immediately destabilize the instance, demonstrating
 
 
 📸 **Screenshot:**  
-`/screenshots/cloudwatch-cpu-spike.png`
+![CPU Utilization](screenshots/cloudwatch-cpu-spike.png)
 
 ---
 
@@ -159,7 +159,7 @@ This demonstrated:
 - Importance of memory metrics for capacity planning
 
 📸 **Optional Screenshot:**  
-`/screenshots/cloudwatch-memory-usage.png`
+![Memory Consumption](screenshots/cloudwatch-memory-usage.png)
 
 ---
 
