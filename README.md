@@ -110,7 +110,7 @@ Nginx was installed not just to serve traffic, but to **produce meaningful logs*
 - Started and validated the agent service
 
 📸 **Screenshot:**  
-`/screenshots/cloudwatch-agent-running.png`
+screenshots/cloudwatch-agent-running.png
 
 ---
 
