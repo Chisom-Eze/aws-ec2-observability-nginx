@@ -3,16 +3,19 @@
 ## 📌 Project Overview
 
 Modern cloud systems fail silently if they are not observed properly.  
-This project focuses on **building visibility into an EC2 instance**, not just running services.
+This project focuses on **building end-to-end observability into an EC2 instance**, not just running services.
 
-I implemented **Amazon CloudWatch Logs and Metrics** on an Amazon Linux EC2 instance and deliberately **pushed the system into stress and failure scenarios** to observe:
+I implemented **Amazon CloudWatch Metrics and Logs** on an Amazon Linux EC2 instance and deliberately **pushed the system into stress and failure scenarios** to observe:
 
+- How incoming traffic is recorded through application access logs
+- How application failures appear in error logs
 - How CPU and memory pressure affect a live server
-- How application failures appear in logs
 - How CloudWatch helps diagnose issues in real time
 - Whether the system can recover without manual intervention
 
-Rather than stopping at “metrics enabled,” this project validates **what those metrics and logs actually tell you** when something goes wrong.
+By combining **access logs, error logs, and system-level metrics**, this project demonstrates how observability provides both **request-level visibility** and **infrastructure-level insight** during normal operation and failure conditions.
+
+Rather than stopping at “metrics enabled,” this project validates **what logs and metrics actually tell you** when something goes wrong.
 
 ---
 
@@ -129,7 +132,32 @@ This proved that CloudWatch was capturing **actual application failures**, not j
 
 ---
 
-### 6️⃣ CPU Stress Testing (System Under Load)
+6️⃣ Nginx Access Log Streaming (Traffic Visibility)
+
+Beyond errors, understanding normal traffic patterns is essential for observability.
+
+To validate request-level visibility:
+
+Confirmed Nginx access logs were being written locally
+
+Verified access logs were streamed to Amazon CloudWatch Logs
+
+Observed incoming HTTP requests in near real time
+
+Used access logs to correlate traffic activity with system metrics
+
+This provides insight into:
+
+Request frequency
+
+Client access behavior
+
+Traffic patterns during normal and stressed conditions
+
+📸 Screenshot:
+![Aceess Logs Livestream](screenshots/cloudwatch-nginx-access-logs.png)
+
+### 7️⃣ CPU Stress Testing (System Under Load)
 
 - Installed `stress`
 - Simulated high CPU usage on the instance
@@ -147,7 +175,7 @@ High CPU utilization did not immediately destabilize the instance, demonstrating
 
 ---
 
-### 7️⃣ Memory Stress Testing & Recovery
+### 8️⃣ Memory Stress Testing & Recovery
 
 - Used `stress` to simulate memory exhaustion
 - Observed increased memory usage in CloudWatch
